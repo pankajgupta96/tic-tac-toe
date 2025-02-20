@@ -7,6 +7,8 @@
     margin: 0;
 }
 
+
+
 .main-container {
     display: flex;
     flex-direction: column;
@@ -23,16 +25,37 @@
     width: 300px;
 }
 
+
+
 .item {
     width: 82px;
     height: 82px;
     border: 2px solid black;
     margin: 2px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     
 }
+.item span{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.draw {
+    
+    height:20px;
+    width: 20px;
+    /* background-color: red; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+}
+
+
 
 .input-container {
     display: flex;

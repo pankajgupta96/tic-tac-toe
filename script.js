@@ -1,11 +1,24 @@
 
+let btnx = document.querySelector('.button1');
+let btno = document.querySelector('.button2');
 
+ 
+ 
 function clickOnX(){
     let boxnumber = document.getElementById("text").value;
 
-    boxnumber = parseInt(boxnumber)-1;
+    boxnumber = parseInt(boxnumber);
 
-    let box = document.getElementsByClassName("item")[boxnumber];
+    
+
+    const selector = `.container :nth-child(${boxnumber+1 }) .draw`;
+        let box = document.querySelector(selector);
+
+
+        const selector2 = `.container :nth-child(${boxnumber +1})`;
+        let box2 = document.querySelector(selector2);
+
+        
 
     let value = box.innerText;
     if( value === "X" || value === "O"){
@@ -16,21 +29,28 @@ function clickOnX(){
     if( box){
 
     box.innerText = "X";
-    box.style.backgroundColor = "#559cad";
+    btnx.disabled = true;
+    btno.disabled = false;
+    box2.style.backgroundColor = "#559cad";
     }
     else{
         console.error("box is not found");
     }
 
     
+    }
 
-}
-
-function clickOnY(){
+function clickOnO(){
     let boxnumber = document.getElementById('text').value;
-     
-    boxnumber = parseInt(boxnumber) -1;
-    let box = document.getElementsByClassName('item')[boxnumber];
+     debugger;
+    boxnumber = parseInt(boxnumber);
+    const selector = `.container :nth-child(${boxnumber + 1}) .draw`;
+        let box = document.querySelector(selector);
+
+
+        const selector2 = `.container :nth-child(${boxnumber + 1}) `;
+        let box2 = document.querySelector(selector2);
+
 
     let value = box.innerText;
     if( value === "X" || value === "O"){
@@ -40,7 +60,9 @@ function clickOnY(){
 
     if(box){
         box.innerText = "O";
-        box.style.backgroundColor = '#c1b2ab';
+        btnx.disabled = false;
+        btno.disabled = true;
+        box2.style.backgroundColor = '#c1b2ab';
     }
     else{
         console.error("box is not found");
